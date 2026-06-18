@@ -1,7 +1,7 @@
 services:
   wordpress:
     container_name: wordpress
-    image: wordpress:latest
+    image: wordpress:7.0.0-php8.2-apache
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -18,7 +18,7 @@ services:
   
   db:
     container_name: wordpress-db
-    image: mysql:latest
+    image: mysql:9.7.1
     volumes:
       - db-data:/var/lib/mysql
     restart: unless-stopped
