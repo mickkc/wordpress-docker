@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: ${DB_USERNAME}
+      WORDPRESS_DB_USER: ${DB_USERNAME:-wordpress}
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
       WORDPRESS_DB_NAME: wordpress
     depends_on:
@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_USER: ${DB_USERNAME:-wordpress}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: wordpress
     env_file: .env
@@ -36,4 +36,3 @@ volumes:
 
 networks:
   wordpress-network:
-    driver: bridge
