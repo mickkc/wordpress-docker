@@ -24,19 +24,19 @@
     # Enter the directory:
     cd wordpress-docker
     ```
-2. Copy the `example.env` and configure the server to your liking.
+2. Copy the `example.env` and configure the options to your liking.
     ```bash
     # Copy it:
-    cp example.env .env
+    cp .example.env .env
 
     # Edit it:
     nano .env
     ```
-3. Start the server using `docker compose`:
+3. Start the container using `docker compose`:
     ```bash
-    docker compose up -d --build
+    docker compose up -d
     ```
-4. You can now access your server on port `8080` (http://localhost:8080).
+4. You can now access your wordpress blog on port `8080` (http://localhost:8080).
 
 ## Usage
 
